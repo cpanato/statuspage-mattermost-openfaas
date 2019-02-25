@@ -1,0 +1,11 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+functions:
+  statuspage-mattermost-openfaas:
+    lang: go
+    handler: ./statuspage-mattermost-openfaas
+    image: ctadeu/statuspage-mattermost-openfaas:0.1
+    environment:
+      write_debug: true
+      MATTERMOST_HOOK: <YOUR_MATTERMOST_HOOK>
